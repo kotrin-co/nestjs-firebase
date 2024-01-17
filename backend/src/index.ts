@@ -43,4 +43,4 @@ createNestServer(server)
   .then(() => console.log('Nest Ready'))
   .catch((err) => console.error('Nest broken', err));
 
-export const api = functions.https.onRequest(server);
+export const api = functions.region('asia-northeast1').https.onRequest(server);
