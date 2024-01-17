@@ -4,7 +4,13 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import * as express from 'express';
 import * as functions from 'firebase-functions';
+import * as admin from 'firebase-admin';
 // import * as helmet from 'helmet';
+
+admin.initializeApp();
+export const db = admin.firestore();
+export const FieldValue = admin.firestore.FieldValue;
+export const bucket = admin.storage().bucket();
 
 const server = express();
 
